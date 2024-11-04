@@ -1,0 +1,172 @@
+* {
+    cursor: url(./items/cursors/wii-player1.cur), auto !important;
+}
+
+
+/* Default styles */
+body {
+    font-family: 'Continuum', sans-serif;
+    background-color: #A3C8E4; /* Light blue color for the Wii background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+    color: black; /* Default text color for light mode */
+    
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.container {
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for the container */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    color: black; /* Default header color for light mode */
+}
+
+header h1 {
+    color: #0099FF; /* Change header color for light mode */
+    margin-bottom: 30px;
+    font-size: 3rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    flex-grow: 1;
+    justify-items: center;
+    align-items: center;
+}
+
+.card {
+    position: relative; /* Make the card position relative */
+    width: 250px;
+    height: 180px;
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly darker to show icon */
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    color: black; /* Text color for light mode */
+    text-decoration: none; /* Remove underline from links */
+    overflow: hidden; /* Hide overflow to keep the icon in place */
+}
+
+.card i {
+    font-size: 5rem; /* Large icon size */
+    position: absolute; /* Positioning for better layout */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to center */
+    color: rgba(0, 155, 255, 0.7); /* Icon color */
+    z-index: 1; /* Ensure icon is behind text */
+    transition: opacity 0.3s ease; /* Smooth transition for icon */
+    opacity: 1; /* Initially visible */
+}
+
+.card span {
+    position: relative; /* For text layering */
+    z-index: 2; /* Ensure text is above icon */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.4s ease; /* Smooth transition for text */
+}
+
+/* Scale effect on hover */
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card:hover i {
+    opacity: 0; /* Fade out icon on hover */
+}
+
+.card:hover span {
+    opacity: 1; /* Fade in text on hover */
+}
+
+footer p {
+    color: black; /* Footer text color for light mode */
+    padding: 20px;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #2C2C2C; /* Dark background color */
+        color: white; /* Default text color for dark mode */
+    }
+
+    header {
+        color: white; /* Header color for dark mode */
+    }
+
+    .container {
+        background-color: rgba(40, 40, 40, 0.9); /* Dark semi-transparent background for the container */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Darker shadow for the container */
+    }
+
+    .card {
+        background-color: #4A4A4A; /* Darker card background */
+        color: white; /* White text for cards in dark mode */
+    }
+
+    footer p {
+        color: #CCCCCC; /* Lighter footer text in dark mode */
+    }
+}
+
+
+
+/* Ensure proper scaling on mobile */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 95vw;
+        height: auto;
+        padding: 20px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+        gap: 20px; /* Reduce gap size */
+    }
+
+    .card {
+        width: 150px;
+        height: 120px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr; /* Single column on extra-small screens */
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+    }
+}
