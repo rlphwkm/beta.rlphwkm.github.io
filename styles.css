@@ -6,7 +6,6 @@
 /* Default styles */
 body {
     font-family: 'Continuum', sans-serif;
-    background-color: #A3C8E4; /* Light blue color for the Wii background */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -23,8 +22,8 @@ body {
 }
 
 .container {
-    width: 90vw;
-    height: 90vh;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -48,7 +47,7 @@ header h1 {
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 0px;
     flex-grow: 1;
     justify-items: center;
     align-items: center;
