@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener("DOMContentLoaded", () => {
     const audioElements = {
         background: document.getElementById('background-music'),
@@ -93,4 +92,17 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    // Apply initial theme based on system preference
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    } else {
+        document.body.classList.add('light');
+    }
+
+    // Listen for changes in color scheme preference
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+        document.body.classList.toggle('dark', event.matches);
+        document.body.classList.toggle('light', !event.matches);
+    });
 });
