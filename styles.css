@@ -2,7 +2,6 @@
     cursor: url(./items/cursors/wii-player1.cur), auto !important;
 }
 
-
 /* Default styles */
 body {
     font-family: 'Continuum', sans-serif;
@@ -14,7 +13,6 @@ body {
     overflow: hidden;
     animation: fadeIn 2s ease-in-out;
     color: black; /* Default text color for light mode */
-    
 }
 
 @keyframes fadeIn {
@@ -29,8 +27,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    background-color: transparent; /* Make container fully invisible */
     border: none; /* Remove borders */
-    box-shadow: none; /* Remove any shadows if present */
+    box-shadow: none; /* Remove any shadows */
 }
 
 header {
@@ -45,7 +44,7 @@ header h1 {
 
 .grid {
     display: grid;
-    /*grid-template-columns: repeat(3, 1fr);*/
+    grid-template-columns: repeat(3, 1fr);
     gap: 0px;
     flex-grow: 1;
     justify-items: center;
@@ -54,8 +53,8 @@ header h1 {
 
 .card {
     position: relative; /* Make the card position relative */
-    width: 250px;
-    height: 180px;
+    width: 280px;
+    height: 210px;
     background-color: rgba(0, 0, 0, 0.1); /* Slightly darker to show icon */
     border-radius: 25px;
     padding: 20px;
@@ -118,11 +117,6 @@ footer p {
         color: white; /* Header color for dark mode */
     }
 
-    .container {
-        background-color: rgba(40, 40, 40, 0.9); /* Dark semi-transparent background for the container */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Darker shadow for the container */
-    }
-
     .card {
         background-color: #4A4A4A; /* Darker card background */
         color: white; /* White text for cards in dark mode */
@@ -133,16 +127,8 @@ footer p {
     }
 }
 
-
-
 /* Ensure proper scaling on mobile */
 @media only screen and (max-width: 768px) {
-    .container {
-        width: 95vw;
-        height: auto;
-        padding: 20px;
-    }
-
     .grid {
         grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
         gap: 20px; /* Reduce gap size */
@@ -168,11 +154,6 @@ footer p {
         height: auto;
     }
 }
-
-
-
-
-
 
 .particles {
     position: fixed;
