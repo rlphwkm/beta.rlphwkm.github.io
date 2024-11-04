@@ -1,16 +1,3 @@
-let audioInitialized = false;
-
-async function initializeAudio() {
-    try {
-        await Tone.start();
-        console.log('Audio context started');
-        return true;
-    } catch (error) {
-        console.error('Failed to initialize audio:', error);
-        return false;
-    }
-}
-
 class WidgetManager {
     constructor() {
         this.notificationWidgets = new Set();
@@ -120,35 +107,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
         const widgets = document.querySelectorAll('.widget');
-
-        if (themeToggle) {
-            themeToggle.addEventListener('click', async () => {
-                if (!audioInitialized) {
-                    audioInitialized = await initializeAudio();
-                }
-                if (audioInitialized) {
-                    const synth = new Tone.Synth().toDestination();
-                    synth.triggerAttackRelease("C4", "8n");
-                }
-                
-                body.classList.toggle('dark-theme');
-                body.classList.toggle('light-theme');
-            });
-        }
-
-        widgets.forEach(widget => {
-            widget.addEventListener('mouseenter', async () => {
-                if (!widget.classList.contains('disabled')) {
-                    if (!audioInitialized) {
-                        audioInitialized = await initializeAudio();
-                    }
-                    if (audioInitialized) {
-                        const synth = new Tone.Synth().toDestination();
-                        synth.triggerAttackRelease("G5", "32n");
-                    }
-                }
-            });
-        });
 
         // Add random notifications for demo purposes
         setInterval(() => {
