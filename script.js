@@ -47,12 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-
-
-
-
+// Function to reset particle properties
 function resetParticle(particle) {
     const edge = Math.floor(Math.random() * 4);
     let startX, startY, endX, endY;
@@ -89,6 +84,7 @@ function resetParticle(particle) {
     particle.style.animationDelay = `${Math.random() * -20}s`;
 }
 
+// Function to create particles
 function createParticles() {
     const existingContainer = document.querySelector('.particles');
     if (existingContainer) {
@@ -122,8 +118,8 @@ function createParticles() {
 
         particles.forEach(particle => {
             const rect = particle.getBoundingClientRect();
-            const dx = mouseX - (rect.left + rect.width/2);
-            const dy = mouseY - (rect.top + rect.height/2);
+            const dx = mouseX - (rect.left + rect.width / 2);
+            const dy = mouseY - (rect.top + rect.height / 2);
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < radius) {
@@ -138,10 +134,25 @@ function createParticles() {
     });
 }
 
+// Function to update particle styles based on color scheme
+function updateParticlesColorScheme() {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const particles = document.querySelectorAll('.particle');
+
+    particles.forEach(particle => {
+        particle.classList.toggle('light-theme', !isDarkMode);
+    });
+}
+
+// Initialize particle creation and color scheme
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         createParticles();
-        
+        updateParticlesColorScheme(); // Set initial color scheme for particles
+
+        // Watch for changes in the preferred color scheme
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateParticlesColorScheme);
+
         const widgetManager = new WidgetManager();
         const body = document.body;
         const widgets = document.querySelectorAll('.widget');
