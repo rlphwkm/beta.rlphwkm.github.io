@@ -24,11 +24,12 @@ body {
 .container {
     width: 100vw;
     height: 100vh;
-    /*background-color: rgb(255, 0, 0, 0.9); /* Transparent background */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    border: none; /* Remove borders */
+    box-shadow: none; /* Remove any shadows if present */
 }
 
 header {
