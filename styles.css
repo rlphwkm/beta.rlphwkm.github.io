@@ -167,7 +167,6 @@ footer p {
 
 .particle {
     position: absolute;
-    background: rgba(0, 0, 0, 0.6);
     border-radius: 50%;
     pointer-events: none;
     transition: transform 0.3s ease-out;
@@ -175,9 +174,20 @@ footer p {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
-.light-theme .particle {
-    background: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+/* Particle color for light theme */
+@media (prefers-color-scheme: light) {
+    .particle {
+        background: rgba(255, 255, 255, 0.6); /* White particles for light mode */
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* Particle color for dark theme */
+@media (prefers-color-scheme: dark) {
+    .particle {
+        background: rgba(0, 155, 255, 0.6); /* Blue particles for dark mode */
+        box-shadow: 0 0 4px rgba(0, 155, 255, 0.4);
+    }
 }
 
 @keyframes floatParticle {
