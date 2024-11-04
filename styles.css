@@ -93,6 +93,7 @@ body {
 
 footer p {
     color: black; /* Footer text color for light mode */
+    margin-top: auto;
     padding: 20px;
 }
 
