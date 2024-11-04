@@ -22,7 +22,7 @@ body {
 
 .container {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 50px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,16 +30,6 @@ body {
     background-color: transparent; /* Make container fully invisible */
     border: none; /* Remove borders */
     box-shadow: none; /* Remove any shadows */
-}
-
-header {
-    color: black; /* Default header color for light mode */
-}
-
-header h1 {
-    color: #0099FF; /* Change header color for light mode */
-    margin-bottom: 0px;
-    font-size: 3rem;
 }
 
 .grid {
@@ -113,9 +103,6 @@ footer p {
         color: white; /* Default text color for dark mode */
     }
 
-    header {
-        color: white; /* Header color for dark mode */
-    }
 
     .card {
         background-color: #4A4A4A; /* Darker card background */
@@ -139,9 +126,6 @@ footer p {
         height: 120px;
     }
 
-    header h1 {
-        font-size: 2rem;
-    }
 }
 
 @media only screen and (max-width: 480px) {
