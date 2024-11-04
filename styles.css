@@ -177,8 +177,8 @@ footer p {
 /* Particle color for light theme */
 @media (prefers-color-scheme: light) {
     .particle {
-        background: rgba(255, 255, 255, 0.6); /* White particles for light mode */
-        box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+        background: rgba(128, 128, 128, 0.6); /* White particles for light mode */
+        box-shadow: 0 0 4px rgba(128, 128, 128, 0.4);
     }
 }
 
