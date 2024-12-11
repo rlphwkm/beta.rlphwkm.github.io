@@ -72,6 +72,7 @@ body {
 }
 
 .card span {
+    font-size: 1.5rem;
     position: relative; /* For text layering */
     z-index: 2; /* Ensure text is above icon */
     opacity: 0; /* Start hidden */

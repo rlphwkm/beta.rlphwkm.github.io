@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         createParticles();
         
         const widgetManager = new WidgetManager();
-        const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
         const widgets = document.querySelectorAll('.widget');
 
