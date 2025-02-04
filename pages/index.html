@@ -3,57 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WII Homescreen Replica</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Main Menu - Ralph Wakim</title>
+    <meta name="description" content="Contact Information for Ralph Wakim. This is a form of business card for Ralph Wakim.">
+    <meta name="keywords" content="Ralph, Wakim, Ralph Wakim, Information, Contact, Contact Information, rlphwkm, rlphwkm info, rlphwkm information">
+    <link rel="author" href="https://rlphwkm.github.io"/>
+    <link rel="stylesheet" href="./styles.css"> <!-- Ensure this points to your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+    <script src="./script.js" defer></script> <!-- Link to your JavaScript file -->
 </head>
-<body class="dark-theme">
-    <header>
-        <h1>Ralph Wakim</h1>
-        <button id="theme-toggle" aria-label="Toggle theme">
-            <svg class="sun-icon" viewBox="0 0 24 24" width="24" height="24">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-        </button>
-    </header>
 
-    <div class="homescreen">
-        <div class="widget" data-title="Profile" data-widget-id="profile">
-            <img src="./items/icons/user.svg" alt="Profile">
-        </div>
-        <div class="widget" data-title="Documents" data-widget-id="documents">
-            <img src="./items/icons/folder.svg" alt="Documents">
-        </div>
-        <div class="widget" data-title="Settings" data-widget-id="settings">
-            <img src="./items/icons/settings.svg" alt="Settings">
-        </div>
-        <div class="widget" data-title="Contacts" data-widget-id="contacts">
-            <img src="./items/icons/contacts.svg" alt="Contacts">
-        </div>
-        <div class="widget" data-title="Work" data-widget-id="work">
-            <img src="./items/icons/briefcase.svg" alt="Work">
-        </div>
-        <div class="widget" data-title="Network" data-widget-id="network">
-            <img src="./items/icons/globe.svg" alt="Network">
-        </div>
-        <div class="widget" data-title="Projects" data-widget-id="projects">
-            <img src="./items/icons/code.svg" alt="Projects">
-        </div>
-        <div class="widget" data-title="About" data-widget-id="about">
-            <img src="./items/icons/info.svg" alt="About">
-        </div>
-        <div class="widget" data-title="Timeline" data-widget-id="timeline">
-            <img src="./items/icons/hourglass.svg" alt="Timeline">
-        </div>
+<body>
+    <audio id="background-music" loop>
+        <source src="./items/sounds/background-music.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="launch-sound" preload="auto">
+        <source src="./items/sounds/start-sound.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="hover-sound" preload="auto">
+        <source src="./items/sounds/hover-sound.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="click-sound" preload="auto">
+        <source src="./items/sounds/select-sound.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <section class="grid">
+            <a href="./aboutme/index.html" class="card card1">
+                <i class="fas fa-user"></i>
+                <span>About Me</span>
+            </a>
+            <a href="./projects/index.html" class="card card2">
+                <i class="fas fa-folder-open"></i>
+                <span>Projects</span>
+            </a>
+            <a href="./skills/index.html" class="card card3">
+                <i class="fas fa-cogs"></i>
+                <span>Skills</span>
+            </a>
+            <a href="./contacts/index.html" class="card card4">
+                <i class="fas fa-address-card"></i>
+                <span>Contact Information</span>
+            </a>
+            <a href="./hire/index.html" class="card card5">
+                <i class="fas fa-briefcase"></i>
+                <span>Hire Me</span>
+            </a>
+            <a href="https://google.com" class="card card6">
+                <i class="fas fa-globe"></i>
+                <span>Browser</span>
+            </a>
+            <a href="./beta/index.html" class="card card6">
+                <i class="fa fa-laptop-code"></i>
+                <span>Beta Testing Page</span>
+            </a>
+            <a href="./site-info/index.html" class="card card6">
+                <i class="fas fa-info-circle"></i>
+                <span>Site Info</span>
+            </a>
+            <a href="../index.html" class="card card6">
+                <i class="fas fa-hourglass-half"></i>
+                <span>Coming Soon</span>
+            </a>
+        </section>
+        <footer>
+            <a href="../index.html" style="color: inherit; text-decoration: none; position: fixed; bottom: 10px; left: 50%; margin-top: auto; padding: 20px; transform: translateX(-50%);" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Ralph Wakim | &copy; 2024</a>
+        </footer>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
